@@ -645,7 +645,7 @@ namespace Js
             for (uint32 i = startIndex; i < limitIndex; i++)
             {
                 Var element;
-                fn(i, TryTemplatedGetItem(arr, i, &element, scriptContext) ? element : missingItem);
+                fn(i, TemplatedGetItem(arr, i, &element, scriptContext) ? element : missingItem);
 
                 if (hasSideEffect && MayChangeType<T>() && !T::Is(arr))
                 {
